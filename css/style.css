@@ -546,7 +546,7 @@ body{
     margin: 0 0.45vw;
   } 
 
-
+/*-----------------------------parallex effext of cloud at hero section--------------------------------------------*/
 .cloud1{
     position: absolute;
     top:8rem;
@@ -554,7 +554,7 @@ body{
     width: 85vw;
     z-index: 2;
 }
-
+/*--------------------------------------------------------------------------------------------------------------*/
 #black_txt{
     background: linear-gradient(to right,#000000, rgb(0, 62, 62));
     -webkit-background-clip: text;
