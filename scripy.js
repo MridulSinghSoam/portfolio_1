@@ -11,7 +11,7 @@ function myFunction() {
   }
 
 /*----------------------------------------------------------------------- */
-/*
+
 $(document).ready(function() {
 
     var counters = $(".count");
@@ -36,7 +36,7 @@ for (j = 0; j < countersQuantity; j++) {
     count(0, counter[j], j);
 }
 });
-*/
+
 /*-------------------------------------------------------*/ 
 
 const project=document.querySelector(".preview");
@@ -100,6 +100,24 @@ const isMouseInsideContainer=(e)=>{
 
 
 
+/*------------------------------image gallery----------------------------------------------------- */
 
+document.body.addEventListener("click", (event) => {
+  const clickedElement = event.target,
+    imgs = document.querySelectorAll(".img");
 
+  if (!clickedElement.classList.contains("img")) {
+    imgs.forEach((img) => img.classList.remove("open"));
+    return;
+  }
 
+  if (clickedElement.classList.contains("open")) {
+    clickedElement.classList.remove("open");
+    return;
+  }
+
+  imgs.forEach((img) => img.classList.remove("open"));
+  clickedElement.classList.add("open");
+});
+
+document.body.addEventListener("click", (event) => {});
