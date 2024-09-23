@@ -16,6 +16,7 @@ Dark white: ##FFFFFF
 }
 
 html{
+    background-color: #000000;
     font-size: 60%;/*red we use the % in body as to relative to 16%*/
     scroll-behavior: smooth;
 }
@@ -351,14 +352,12 @@ body{
     height: 10rem;
 }
 
-
-
 .form{
     margin-top:3rem;
 }
 
 .label_field{
-    padding: 2rem;
+    padding-left: 2rem;
     font-size: 3rem;
     font-weight: 500;
     color: white;
@@ -366,7 +365,7 @@ body{
 }
 
 .text_box,
-#text_area{
+#message{
     height: 3rem;
     width: 80%;
     justify-content: center;
@@ -376,7 +375,9 @@ body{
 }
 
 .field_flex{
+    justify-content:space-between;
     display: flex;
+    margin-top: 3rem;
 }
 
 .btn_end{
@@ -442,109 +443,93 @@ body{
 
 /*---------------------------------------------------------------*/
 
-.wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 70vh;
-}
 
-.imgs-parent {
-    display: flex;
-    gap: 1rem;
-    perspective: 60rem;
+.img_slider{
+    vertical-align: middle;
   }
   
-.img {
-    margin-top:-10rem;
-    width: 15rem;
-    height: 35rem;
-    background-size: cover;
-    background-position: center;
-    cursor: pointer;
-    transition: 
-      transform 1.25s var(--transition), 
-      filter 3s var(--transition),
-      width 0.3s var(--transition);
+  /* Position the image container (needed to position the left and right arrows) */
+  .container_slide {
     position: relative;
-    filter: grayscale(1) brightness(0.5);
-    will-change: transform, filter;
   }
   
-  /* When Hovered */
-  .img:hover {
-    transform: translateZ(17.375rem);
-    filter: inherit;
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
   }
   
-  /* Sidebar Helpers */
-  .img::before,
-  .img::after {
-    content: "";
+  /* Add a pointer when hovering over the thumbnail images */
+  .cursor {
+    cursor: pointer;
+  }
+  
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
     position: absolute;
-    width: 1.25rem;
-    height: 100%;
-    right: -1.25rem;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
   }
   
-  .img::after {
-    left: -1.25rem;
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
   }
   
-  /* When Hovered RIGHT */
-  .img:hover + * {
-    transform: translateZ(14.77rem) rotateY(35deg);
-    filter: grayscale(0.2) brightness(0.9);
-    z-index: -1;
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
   }
   
-  .img:hover + * + * {
-    transform: translateZ(9.73rem) rotateY(40deg);
-    filter: grayscale(0.4) brightness(0.8);
-    z-index: -2;
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
   }
   
-  .img:hover + * + * + * {
-    transform: translateZ(4.17rem) rotateY(35deg);
-    filter: grayscale(0.6) brightness(0.7);
-    z-index: -3;
+  /* Container for image text */
+  .caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
   }
   
-  .img:hover + * + * + * + * {
-    transform: translateZ(1.1rem) rotateY(25deg);
-    filter: grayscale(0.8) brightness(0.6);
-    z-index: -4;
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
   }
   
-  /* When Hovered LEFT */
-  .img:has(+ :hover) {
-    transform: translateZ(14.77rem) rotateY(-35deg);
-    filter: grayscale(0.2) brightness(0.9);
+  /* Six columns side by side */
+  .column {
+    float: left;
+    width: 16.66%;
   }
   
-  .img:has(+ * + :hover) {
-    transform: translateZ(9.73rem) rotateY(-40deg);
-    filter: grayscale(0.4) brightness(0.8);
+  /* Add a transparency effect for thumnbail images */
+  .demo {
+    opacity: 0.6;
   }
   
-  .img:has(+ * + * + :hover) {
-    transform: translateZ(4.17rem) rotateY(-35deg);
-    filter: grayscale(0.6) brightness(0.7);
+  .active,
+  .demo:hover {
+    opacity: 1;
   }
-  
-  .img:has(+ * + * + * + :hover) {
-    transform: translateZ(1.1rem) rotateY(-25deg);
-    filter: grayscale(0.8) brightness(0.6);
-  }
-  
-  /* When clicked */
-  .open {
-    width: 30vw;
-    transform: translateZ(17.375rem);
-    filter: inherit;
-    z-index: 1;
-    margin: 0 0.45vw;
-  } 
 
 /*-----------------------------parallex effext of cloud at hero section--------------------------------------------*/
 .cloud1{
